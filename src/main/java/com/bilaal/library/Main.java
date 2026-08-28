@@ -1,4 +1,4 @@
-package main.java.com.bilaal.library;
+package com.bilaal.library;
 
 public class Main {
     
