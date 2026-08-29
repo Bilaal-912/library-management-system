@@ -30,4 +30,10 @@ public class LibraryService {
         book.setAvailableCopies(book.getAvailableCopies() - 1);
         member.addBorrowedBook(bookId);
     }
+    public void returnBook(String memberId, String bookId) {
+        Book book = books.get(bookId);
+        Member member = members.get(memberId);
+        book.setAvailableCopies(book.getAvailableCopies()+1);
+        member.removeBorrowedBook(bookId);
+    }
 }
