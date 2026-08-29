@@ -46,4 +46,12 @@ public class LibraryService {
         }
         return results;
     }
+    public List<Book> getAllBooks() {
+        return new ArrayList<>(books.values());
+    }
+
+    public List<Member> getAllMembers() {
+        return new ArrayList<>(members.values());
+    }
 }
+
