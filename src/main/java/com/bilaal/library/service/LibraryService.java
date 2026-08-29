@@ -4,7 +4,8 @@ import com.bilaal.library.model.Book;
 import com.bilaal.library.model.Member;
 import java.util.HashMap;
 import java.util.Map;
-
+import java.util.List;
+import java.util.ArrayList;
 public class LibraryService {
     private Map<String, Book> books;
     private Map<String, Member> members;
@@ -35,5 +36,14 @@ public class LibraryService {
         Member member = members.get(memberId);
         book.setAvailableCopies(book.getAvailableCopies()+1);
         member.removeBorrowedBook(bookId);
+    }
+    public List<Book> searchBookByTitle(String title) {
+        List<Book> results = new ArrayList<>();
+        for (Book book : books.values()) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                results.add(book);
+            }
+        }
+        return results;
     }
 }
